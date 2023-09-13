@@ -13,7 +13,7 @@ root.geometry('400x400')
 root['background'] = 'lightblue'
 
 
-API_key = 'Enter API KEY Here'
+API_key = 'Enter API Key Here'
 
 city_name = StringVar()
 city_entry = Entry(root, textvariable=city_name)
@@ -73,20 +73,25 @@ if zip_code_entry.get() == '' and city_entry.get() == '':
             
             label_reminder.configure(text='Please enter a valid city name and zip code')
 
+        PATH = r"/Path/to/Images/"
         if description == 'clear sky':
-            img = Image.open('clear_sky.png')
+            img = Image.open(PATH + "clear_sky.png")
         elif description == 'thunderstorm':
-            img = Image.open('thunderstorm.png')
+            img = Image.open(PATH + "thunderstorm.png")
         elif description == 'scattered clouds':
-            img = Image.open('scattered_clouds.png')
+            img = Image.open(PATH + "scattered_clouds.png")
         elif description == 'windy':
-            img = Image.open('windy.png')
+            img = Image.open(PATH + "windy.png")
         elif description == 'Rainy':
-            img = Image.open('Rainy.png')
+            img = Image.open(PATH + "Rainy.png")
         elif description == 'snow':
-            img = Image.open('snow.png')
+            img = Image.open(PATH + "snow.png")
         elif description == 'broken clouds':
-            img = Image.open('broken_clouds.png')
+            img = Image.open(PATH + "broken_clouds.png")
+        elif description == 'mist':
+            img = Image.open(PATH + "misty.png")
+        elif description == 'haze':
+            img = Image.open(PATH + "haze.png")
 
         image = img.resize((100, 100))
         new_image = ImageTk.PhotoImage(image)
@@ -140,5 +145,3 @@ label_mph.place(x=300, y=150)
 
 root.mainloop()
 
-
-# Will add Haze description and image in next update
